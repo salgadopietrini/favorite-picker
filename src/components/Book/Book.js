@@ -18,23 +18,25 @@ export default function Book(props) {
   };
 
   
+
+  
   return (
     <div>
     
-      <Card sx={{ maxWidth: 150 }}>
-      
-      <div>
+      <Card sx={{ maxWidth: 180}}>
         <CardHeader
+          titleTypographyProps={{variant:'body1' }}
           title={props.info.title}
           subheader={props.info.data}
         />
+
         <CardMedia
           component="img"
-          width="200"
+          width="150"
           image={props.info.image}
           alt="Book Cover"
         />
-      </div>
+      
       
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
