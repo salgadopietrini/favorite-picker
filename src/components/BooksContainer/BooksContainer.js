@@ -52,8 +52,8 @@ export default function BooksContainer() {
                 <Grid
                   item
                   xs={2}
-                  sm={4}
-                  md={4}
+                  sm={2}
+                  md={3}
                   key={Math.floor(Math.random() * 10000)}
                 >
                   <Book info={elem} handleSelect={handleSelect} />
