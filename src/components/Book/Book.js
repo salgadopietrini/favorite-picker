@@ -6,6 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
+import { height } from '@mui/system';
 
 
 
@@ -23,7 +24,7 @@ export default function Book(props) {
   return (
     <div>
     
-      <Card sx={{ maxWidth: 180}}>
+      <Card sx={{ maxWidth: 180 , height: 430}}>
         <CardHeader
           titleTypographyProps={{variant:'body1' }}
           title={props.info.title}
@@ -39,7 +40,7 @@ export default function Book(props) {
       
       
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton sx={{ marginBottom: 5}} aria-label="add to favorites">
           <FavoriteIcon onClick={selectBook} />
         </IconButton>
         <IconButton aria-label="share">
