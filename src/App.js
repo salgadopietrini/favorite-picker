@@ -2,7 +2,7 @@ import React from "react";
 import BooksContainer from "./components/BooksContainer/BooksContainer";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import FavoriteContainer from "./components/FavoriteContainer/FavoriteContainer";
-import NavBar from "./components/NavBar/NavBar";
+
 
 export default function App() {
   return (

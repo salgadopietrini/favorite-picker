@@ -40,11 +40,11 @@ export default function BooksContainer() {
       <React.Fragment>
         <NavBar favorites={favorites} />
         <CssBaseline />
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           {favorites.length > 0 && <FavoriteBooks list={favorites} />}
           <Grid
             container
-            spacing={{ xs: 2, md: 3 }}
+            spacing={{ xs: 2, md: 2 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
             {books.length > 0 ? (

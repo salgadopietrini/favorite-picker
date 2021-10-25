@@ -40,10 +40,10 @@ export default function Book(props) {
       
       
       <CardActions disableSpacing>
-        <IconButton sx={{ marginBottom: 5}} aria-label="add to favorites">
+        <IconButton  aria-label="add to favorites">
           <FavoriteIcon onClick={selectBook} />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton  aria-label="share">
           <ShareIcon />
         </IconButton>
       </CardActions>
