@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import "../../Styles/Styles.scss";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
 export default function FavoriteContainer(props) {
   const [favorites, setFavorites] = useState(props.location.state);
@@ -25,17 +31,46 @@ export default function FavoriteContainer(props) {
         </div>
 
         <CssBaseline />
-        <Container>
-          {favorites.map((elem) => (
-            <div>
-              <div>{elem.title}</div>
-              <div>{elem.author}</div>
-              <div>{elem.data}</div>
-              <div>
-                <img alt="Book Cover" src={elem.image} width="100px"></img>
-              </div>
-            </div>
-          ))}
+        <h1 className="favoriteTitle">My Favorite Books</h1>
+        <Container maxWidth="md">
+          <Grid
+            container
+            spacing={{ xs: 2, md: 2 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            {favorites.map((elem) => (
+              <Grid
+                item
+                xs={2}
+                sm={2}
+                md={4}
+                key={Math.floor(Math.random() * 10000)}
+              >
+                <Card sx={{ display: "flex", maxWidth: 280, marginBottom: 3 }}>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <CardContent sx={{ flex: "1 0 auto" }}>
+                      <Typography component="div" variant="h5">
+                        {elem.title}
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        color="text.secondary"
+                        component="div"
+                      >
+                        {elem.author}
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 151 }}
+                    image={elem.image}
+                    alt="Books cover"
+                  />
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </React.Fragment>
     </div>

@@ -20,7 +20,7 @@
 
 .NavContainer .NavText1 {
   color: whitesmoke;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   margin-left: 180px;
   margin-top: 7px;
   text-decoration: none;
@@ -28,9 +28,18 @@
 
 .NavContainer .NavText2 {
   color: whitesmoke;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   margin-left: 30px;
   margin-top: 7px;
   text-decoration: none;
+}
+
+/* FAVORITE CONTAINER */
+.favoriteTitle {
+  color: #282835;
+  font-family: "Exo 2", sans-serif;
+  font-weight: bold;
+  margin-left: 180px;
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=Styles.css.map */
