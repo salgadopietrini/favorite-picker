@@ -20,18 +20,21 @@ export default function Book(props) {
   
   return (
     <div>
-    <
-    <Card sx={{ maxWidth: 150 }}>
-      <CardHeader
-        title={props.info.title}
-        subheader={props.info.data}
-      />
-      <CardMedia
-        component="img"
-        width="200"
-        image={props.info.image}
-        alt="Book Cover"
-      />
+    
+      <Card sx={{ maxWidth: 150 }}>
+      
+      <div>
+        <CardHeader
+          title={props.info.title}
+          subheader={props.info.data}
+        />
+        <CardMedia
+          component="img"
+          width="200"
+          image={props.info.image}
+          alt="Book Cover"
+        />
+      </div>
       
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
