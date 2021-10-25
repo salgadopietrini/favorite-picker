@@ -7,7 +7,6 @@ import Container from "@mui/material/Container";
 import NavBar from "../NavBar/NavBar";
 import Grid from "@mui/material/Grid";
 
-
 export default function BooksContainer() {
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -27,13 +26,24 @@ export default function BooksContainer() {
     }
   };
 
+  const handleDelete = (id) => {
+    const indexToDelete = favorites.findIndex((elem) => elem.id === id);
+    setFavorites(
+      favorites
+        .slice(0, indexToDelete)
+        .concat(favorites.slice(indexToDelete + 1, favorites.length))
+    );
+  };
+
   return (
     <div>
       <React.Fragment>
         <NavBar favorites={favorites} />
         <CssBaseline />
         <Container maxWidth="md">
-          {favorites.length > 0 && <FavoriteBooks list={favorites} />}
+          {favorites.length > 0 && (
+            <FavoriteBooks list={favorites} handleDelete={handleDelete} />
+          )}
           <Grid
             container
             spacing={{ xs: 2, md: 2 }}

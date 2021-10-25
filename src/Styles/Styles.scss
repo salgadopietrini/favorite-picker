@@ -38,4 +38,22 @@
   margin-bottom: 50px;
 }
 
+/* FAVORITE PREVIEW */
 
+.delete-button {
+  margin: 0;
+  &:hover {
+    cursor: pointer;
+    animation: delete-button 0.25s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes delete-button {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
