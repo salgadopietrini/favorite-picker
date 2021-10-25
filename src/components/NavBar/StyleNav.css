@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap");
+.NavContainer {
+  background-color: #64b6a8;
+  -webkit-box-shadow: 1px 1px 5px 1px grey;
+          box-shadow: 1px 1px 5px 1px grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.NavContainer .NavText1 {
+  color: whitesmoke;
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 180px;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+.NavContainer .NavText2 {
+  color: whitesmoke;
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 30px;
+  margin-top: 7px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=StyleNav.css.map */
