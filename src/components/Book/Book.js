@@ -19,14 +19,16 @@ export default function Book(props) {
 
   
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div>
+    <
+    <Card sx={{ maxWidth: 150 }}>
       <CardHeader
         title={props.info.title}
         subheader={props.info.data}
       />
       <CardMedia
         component="img"
-        height="194"
+        width="200"
         image={props.info.image}
         alt="Book Cover"
       />
@@ -40,5 +42,6 @@ export default function Book(props) {
         </IconButton>
       </CardActions>
     </Card>
+    </div>
   );
 }
