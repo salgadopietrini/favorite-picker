@@ -24,7 +24,7 @@ export default function Book(props) {
   return (
     <div>
     
-      <Card sx={{ maxWidth: 180 , height: 430}}>
+      <Card sx={{ maxWidth: 180 }}>
         <CardHeader
           titleTypographyProps={{variant:'body1' }}
           title={props.info.title}

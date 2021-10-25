@@ -5,16 +5,8 @@ import FavoriteBooks from "../FavoriteBooks/FavoriteBooks";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import NavBar from "../NavBar/NavBar";
-import { experimentalStyled as styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 export default function BooksContainer() {
   const [books, setBooks] = useState([]);

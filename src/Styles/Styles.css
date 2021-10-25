@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap");
+/* NAVBAR */
 .NavContainer {
   background-color: #64b6a8;
   -webkit-box-shadow: 1px 1px 5px 1px grey;
@@ -32,4 +33,4 @@
   margin-top: 7px;
   text-decoration: none;
 }
-/*# sourceMappingURL=StyleNav.css.map */
+/*# sourceMappingURL=Styles.css.map */
