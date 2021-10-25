@@ -1,16 +1,18 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 
 export default function FavoriteBookPreview(props) {
+  const deleteItem = () => {
+    props.handleDelete(props.info.id);
+  };
+
   return (
     <div>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
         <img alt="Book Cover" src={props.info.image} width="100px"></img>
-        <Fab size="small" color="primary" aria-label="delete">
-          <HighlightOffIcon />
-        </Fab>
+        <br />
+        <DeleteSharpIcon className="delete-button" onClick={deleteItem} />
       </Box>
     </div>
   );

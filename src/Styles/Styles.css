@@ -42,4 +42,39 @@
   margin-left: 180px;
   margin-bottom: 50px;
 }
+
+/* FAVORITE PREVIEW */
+.delete-button {
+  margin: 0;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  -webkit-animation: delete-button 0.25s;
+          animation: delete-button 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes delete-button {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes delete-button {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
 /*# sourceMappingURL=Styles.css.map */
