@@ -1,5 +1,10 @@
 import React from "react";
+import BooksContainer from "./components/BooksContainer/BooksContainer";
 
 export default function App() {
-  return <div className="App">Hello World!</div>;
+  return (
+    <div>
+      <BooksContainer />
+    </div>
+  );
 }
