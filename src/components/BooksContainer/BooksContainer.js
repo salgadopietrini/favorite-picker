@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Book from "../Book/Book";
 import FavoriteBooks from "../FavoriteBooks/FavoriteBooks";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
 export default function BooksContainer() {
   const [books, setBooks] = useState([]);
@@ -21,18 +24,23 @@ export default function BooksContainer() {
 
   return (
     <div>
-      {favorites.length > 0 && <FavoriteBooks list={favorites} />}
-      {books.length > 0 ? (
-        books.map((elem) => (
-          <Book
-            info={elem}
-            handleSelect={handleSelect}
-            key={Math.floor(Math.random() * 10000)}
-          />
-        ))
-      ) : (
-        <h1>Loading books...</h1>
-      )}
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth="lg">
+          {favorites.length > 0 && <FavoriteBooks list={favorites} />}
+          {books.length > 0 ? (
+            books.map((elem) => (
+              <Book
+                info={elem}
+                handleSelect={handleSelect}
+                key={Math.floor(Math.random() * 10000)}
+              />
+            ))
+          ) : (
+            <h1>Loading books...</h1>
+          )}
+        </Container>
+      </React.Fragment>
     </div>
   );
 }
