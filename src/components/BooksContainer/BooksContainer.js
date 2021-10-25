@@ -3,8 +3,8 @@ import axios from "axios";
 import Book from "../Book/Book";
 import FavoriteBooks from "../FavoriteBooks/FavoriteBooks";
 import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import NavBar from "../NavBar/NavBar";
 
 export default function BooksContainer() {
   const [books, setBooks] = useState([]);
@@ -25,6 +25,7 @@ export default function BooksContainer() {
   return (
     <div>
       <React.Fragment>
+        <NavBar favorites={favorites} />
         <CssBaseline />
         <Container maxWidth="lg">
           {favorites.length > 0 && <FavoriteBooks list={favorites} />}
