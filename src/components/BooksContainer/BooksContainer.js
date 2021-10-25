@@ -29,7 +29,10 @@ export default function BooksContainer() {
   }, []);
 
   const handleSelect = (book) => {
-    setFavorites((prevValue) => [...prevValue, book]);
+    if (favorites.some((elem) => elem.id === book.id)) {
+    } else {
+      setFavorites((prevValue) => [...prevValue, book]);
+    }
   };
 
   return (
