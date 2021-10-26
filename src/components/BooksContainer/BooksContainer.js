@@ -49,7 +49,10 @@ export default function BooksContainer() {
                     md={3}
                     key={Math.floor(Math.random() * 10000)}
                   >
-                    <Book info={elem.volumeInfo} handleSelect={handleSelect} />
+                    <Book
+                      info={{ ...elem.volumeInfo, id: elem.id }}
+                      handleSelect={handleSelect}
+                    />
                   </Grid>
                 ))
             ) : (

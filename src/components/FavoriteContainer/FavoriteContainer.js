@@ -44,7 +44,7 @@ export default function FavoriteContainer(props) {
                         color="text.secondary"
                         component="div"
                       >
-                        {elem.authors[0]}
+                        {elem.authors ? elem.authors[0] : null}
                       </Typography>
                     </CardContent>
                   </Box>
