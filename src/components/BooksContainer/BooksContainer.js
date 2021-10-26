@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { Context } from "../../App";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function BooksContainer() {
   const { library, favorites, setFavorites } = useContext(Context);
@@ -30,6 +31,7 @@ export default function BooksContainer() {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="md">
+          <SearchBar />
           {favorites.length > 0 && (
             <FavoriteBooks list={favorites} handleDelete={handleDelete} />
           )}

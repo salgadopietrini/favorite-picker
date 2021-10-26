@@ -10,14 +10,17 @@ export const Context = React.createContext();
 export default function App() {
   const [library, setLibrary] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://www.googleapis.com/books/v1/volumes?q=potter&maxResults=40")
+      .get(
+        `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40`
+      )
       .then((response) => {
         setLibrary((books) => response.data.items);
       });
-  }, []);
+  }, [search]);
 
   return (
     <div>
@@ -26,6 +29,8 @@ export default function App() {
           library: library,
           favorites: favorites,
           setFavorites: setFavorites,
+          search: search,
+          setSearch: setSearch,
         }}
       >
         <BrowserRouter>
