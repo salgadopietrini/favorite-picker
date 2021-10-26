@@ -13,9 +13,9 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/c0443335-8da4-40fd-b38d-0e5bb72227bf")
+      .get("https://www.googleapis.com/books/v1/volumes?q=potter&maxResults=40")
       .then((response) => {
-        setLibrary((books) => response.data);
+        setLibrary((books) => response.data.items);
       });
   }, []);
 

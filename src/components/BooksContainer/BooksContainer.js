@@ -39,17 +39,19 @@ export default function BooksContainer() {
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
             {library.length > 0 ? (
-              library.map((elem) => (
-                <Grid
-                  item
-                  xs={2}
-                  sm={2}
-                  md={3}
-                  key={Math.floor(Math.random() * 10000)}
-                >
-                  <Book info={elem} handleSelect={handleSelect} />
-                </Grid>
-              ))
+              library
+                .filter((elem) => elem.volumeInfo.imageLinks)
+                .map((elem) => (
+                  <Grid
+                    item
+                    xs={2}
+                    sm={2}
+                    md={3}
+                    key={Math.floor(Math.random() * 10000)}
+                  >
+                    <Book info={elem.volumeInfo} handleSelect={handleSelect} />
+                  </Grid>
+                ))
             ) : (
               <h1>Loading books...</h1>
             )}

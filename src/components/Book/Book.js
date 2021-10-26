@@ -6,7 +6,6 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
-import { height } from "@mui/system";
 
 export default function Book(props) {
   const selectBook = () => {
@@ -19,13 +18,13 @@ export default function Book(props) {
         <CardHeader
           titleTypographyProps={{ variant: "body1" }}
           title={props.info.title}
-          subheader={props.info.data}
+          subheader={props.info.publishedDate}
         />
 
         <CardMedia
           component="img"
           width="150"
-          image={props.info.image}
+          image={props.info.imageLinks.thumbnail}
           alt="Book Cover"
         />
 

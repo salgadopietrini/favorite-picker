@@ -44,14 +44,14 @@ export default function FavoriteContainer(props) {
                         color="text.secondary"
                         component="div"
                       >
-                        {elem.author}
+                        {elem.authors[0]}
                       </Typography>
                     </CardContent>
                   </Box>
                   <CardMedia
                     component="img"
                     sx={{ width: 151 }}
-                    image={elem.image}
+                    image={elem.imageLinks.thumbnail}
                     alt="Books cover"
                   />
                 </Card>

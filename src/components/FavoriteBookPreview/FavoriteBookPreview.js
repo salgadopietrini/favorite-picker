@@ -10,7 +10,11 @@ export default function FavoriteBookPreview(props) {
   return (
     <div>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <img alt="Book Cover" src={props.info.image} width="100px"></img>
+        <img
+          alt="Book Cover"
+          src={props.info.imageLinks.thumbnail}
+          width="100px"
+        ></img>
         <br />
         <DeleteSharpIcon className="delete-button" onClick={deleteItem} />
       </Box>
