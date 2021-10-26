@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Book from "../Book/Book";
 import FavoriteBooks from "../FavoriteBooks/FavoriteBooks";
@@ -6,18 +6,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import NavBar from "../NavBar/NavBar";
 import Grid from "@mui/material/Grid";
+import { Context } from "../../App";
 
 export default function BooksContainer() {
-  const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://mocki.io/v1/c0443335-8da4-40fd-b38d-0e5bb72227bf")
-      .then((response) => {
-        setBooks((books) => response.data);
-      });
-  }, []);
+  const library = useContext(Context);
 
   const handleSelect = (book) => {
     if (favorites.some((elem) => elem.id === book.id)) {
@@ -49,8 +42,8 @@ export default function BooksContainer() {
             spacing={{ xs: 2, md: 2 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {books.length > 0 ? (
-              books.map((elem) => (
+            {library.length > 0 ? (
+              library.map((elem) => (
                 <Grid
                   item
                   xs={2}
