@@ -33,28 +33,37 @@ export default function FavoriteContainer(props) {
                 md={4}
                 key={Math.floor(Math.random() * 10000)}
               >
-                <Card sx={{ display: "flex", maxWidth: 280, marginBottom: 3 }}>
-                  <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    <CardContent sx={{ flex: "1 0 auto" }}>
-                      <Typography component="div" variant="h5">
-                        {elem.title}
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        color="text.secondary"
-                        component="div"
-                      >
-                        {elem.authors ? elem.authors[0] : null}
-                      </Typography>
-                    </CardContent>
-                  </Box>
-                  <CardMedia
-                    component="img"
-                    sx={{ width: 151 }}
-                    image={elem.imageLinks.thumbnail}
-                    alt="Books cover"
-                  />
-                </Card>
+                <a
+                  href={elem.infoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card
+                    sx={{ display: "flex", maxWidth: 280, marginBottom: 3 }}
+                  >
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <CardContent sx={{ flex: "1 0 auto" }}>
+                        <Typography component="div" variant="h5">
+                          {elem.title}
+                        </Typography>
+                        <Typography
+                          variant="subtitle1"
+                          color="text.secondary"
+                          component="div"
+                        >
+                          {elem.authors ? elem.authors[0] : null}
+                        </Typography>
+                      </CardContent>
+                    </Box>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 151 }}
+                      image={elem.imageLinks.thumbnail}
+                      alt="Books cover"
+                    />
+                  </Card>
+                </a>
               </Grid>
             ))}
           </Grid>
