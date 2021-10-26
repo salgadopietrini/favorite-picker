@@ -18,7 +18,7 @@ export default function App() {
         `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40`
       )
       .then((response) => {
-        setLibrary((books) => response.data.items);
+        setLibrary(response.data.items);
       });
   }, [search]);
 
