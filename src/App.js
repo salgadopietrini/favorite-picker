@@ -3,11 +3,13 @@ import BooksContainer from "./components/BooksContainer/BooksContainer";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import FavoriteContainer from "./components/FavoriteContainer/FavoriteContainer";
 import axios from "axios";
+import NavBar from "./components/NavBar/NavBar";
 
 export const Context = React.createContext();
 
 export default function App() {
   const [library, setLibrary] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     axios
@@ -19,8 +21,15 @@ export default function App() {
 
   return (
     <div>
-      <Context.Provider value={library}>
+      <Context.Provider
+        value={{
+          library: library,
+          favorites: favorites,
+          setFavorites: setFavorites,
+        }}
+      >
         <BrowserRouter>
+          <NavBar />
           <Switch>
             <Route exact path={"/"} component={BooksContainer}></Route>
             <Route

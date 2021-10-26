@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../Styles/Styles.scss";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,27 +9,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { Context } from "../../App";
 
 export default function FavoriteContainer(props) {
-  const [favorites, setFavorites] = useState(props.location.state);
+  const { favorites } = useContext(Context);
 
   return (
     <div>
       <React.Fragment>
-        <div className="NavContainer">
-          <Link className="NavText1" to={"/"}>
-            Home
-          </Link>
-          <Link
-            className="NavText2"
-            to={{
-              pathname: "/favorites",
-            }}
-          >
-            Favorite Books
-          </Link>
-        </div>
-
         <CssBaseline />
         <h1 className="favoriteTitle">My Favorite Books</h1>
         <Container maxWidth="md">

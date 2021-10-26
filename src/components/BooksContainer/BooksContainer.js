@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import Book from "../Book/Book";
 import FavoriteBooks from "../FavoriteBooks/FavoriteBooks";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
-import NavBar from "../NavBar/NavBar";
 import Grid from "@mui/material/Grid";
 import { Context } from "../../App";
 
 export default function BooksContainer() {
-  const [favorites, setFavorites] = useState([]);
-  const library = useContext(Context);
+  const { library, favorites, setFavorites } = useContext(Context);
 
   const handleSelect = (book) => {
     if (favorites.some((elem) => elem.id === book.id)) {
@@ -31,7 +28,6 @@ export default function BooksContainer() {
   return (
     <div>
       <React.Fragment>
-        <NavBar favorites={favorites} />
         <CssBaseline />
         <Container maxWidth="md">
           {favorites.length > 0 && (
