@@ -40,26 +40,24 @@ export default function BooksContainer() {
             spacing={{ xs: 2, md: 2 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {library.length > 0 ? (
-              library
-                .filter((elem) => elem.volumeInfo.imageLinks)
-                .map((elem) => (
-                  <Grid
-                    item
-                    xs={2}
-                    sm={2}
-                    md={3}
-                    key={Math.floor(Math.random() * 10000)}
-                  >
-                    <Book
-                      info={{ ...elem.volumeInfo, id: elem.id }}
-                      handleSelect={handleSelect}
-                    />
-                  </Grid>
-                ))
-            ) : (
-              <h1>Loading books...</h1>
-            )}
+            {library.length > 0
+              ? library
+                  .filter((elem) => elem.volumeInfo.imageLinks)
+                  .map((elem) => (
+                    <Grid
+                      item
+                      xs={2}
+                      sm={2}
+                      md={3}
+                      key={Math.floor(Math.random() * 10000)}
+                    >
+                      <Book
+                        info={{ ...elem.volumeInfo, id: elem.id }}
+                        handleSelect={handleSelect}
+                      />
+                    </Grid>
+                  ))
+              : null}
           </Grid>
         </Container>
       </React.Fragment>
