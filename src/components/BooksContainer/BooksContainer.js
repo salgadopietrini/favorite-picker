@@ -49,7 +49,7 @@ export default function BooksContainer() {
                       xs={2}
                       sm={2}
                       md={3}
-                      key={Math.floor(Math.random() * 10000)}
+                      key={Math.floor(Math.random() * 100000000)}
                     >
                       <Book
                         info={{ ...elem.volumeInfo, id: elem.id }}

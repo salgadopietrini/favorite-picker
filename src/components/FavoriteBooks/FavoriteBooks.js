@@ -19,6 +19,7 @@ export default function FavoriteBooks(props) {
           <Item>
             <FavoriteBookPreview
               info={elem}
+              key={Math.floor(Math.random() * 100000000)}
               handleDelete={props.handleDelete}
             />
           </Item>

@@ -45,7 +45,9 @@ export default function FavoriteContainer(props) {
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                       <CardContent sx={{ flex: "1 0 auto" }}>
                         <Typography component="div" variant="h5">
-                          {elem.title}
+                          {elem.title && elem.title.length > 50
+                            ? elem.title.slice(0, 50) + "..."
+                            : elem.title}
                         </Typography>
                         <Typography
                           variant="subtitle1"

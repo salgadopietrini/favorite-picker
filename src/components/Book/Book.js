@@ -17,8 +17,12 @@ export default function Book(props) {
       <Card sx={{ maxWidth: 180 }}>
         <CardHeader
           titleTypographyProps={{ variant: "body1" }}
-          title={props.info.title}
-          subheader={props.info.publishedDate}
+          title={
+            props.info.title && props.info.title.length > 50
+              ? props.info.title.slice(0, 50) + "..."
+              : props.info.title
+          }
+          subheader={props.info.publishedDate && props.info.publishedDate}
         />
 
         <CardMedia
@@ -29,8 +33,8 @@ export default function Book(props) {
         />
 
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon onClick={selectBook} />
+          <IconButton aria-label="add to favorites" onClick={selectBook}>
+            <FavoriteIcon />
           </IconButton>
           <IconButton
             aria-label="share"
@@ -39,7 +43,7 @@ export default function Book(props) {
               window.open(
                 "https://twitter.com/intent/tweet?text=" +
                   "My favorite book is " +
-                  `${props.info.title}` +
+                  `${props.info.title && props.info.title}` +
                   "!! <3333",
                 "_blank"
               );

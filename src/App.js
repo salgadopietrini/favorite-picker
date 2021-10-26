@@ -13,13 +13,17 @@ export default function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40`
-      )
-      .then((response) => {
-        setLibrary(response.data.items);
-      });
+    if (/\S/.test(search)) {
+      axios
+        .get(
+          `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=40`
+        )
+        .then((response) => {
+          setLibrary(response.data.items);
+        });
+    } else {
+      setLibrary([]);
+    }
   }, [search]);
 
   return (

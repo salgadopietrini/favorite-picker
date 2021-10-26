@@ -57,7 +57,7 @@ export default function SearchBar() {
         aria-label="Demo input"
         onChange={handleSearch}
         value={search}
-        placeholder="Type something..."
+        placeholder="Search you book..."
       />
     </div>
   );
