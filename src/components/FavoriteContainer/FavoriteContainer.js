@@ -43,13 +43,18 @@ export default function FavoriteContainer(props) {
                     sx={{ display: "flex", maxWidth: 280, marginBottom: 3 }}
                   >
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
-                      <CardContent sx={{ flex: "1 0 auto" }}>
-                        <Typography component="div" variant="h5">
+                      <CardContent sx={{ flex: "1 0 auto", height: 200 }}>
+                        <Typography
+                          component="div"
+                          variant="h5"
+                          fontSize="18px"
+                        >
                           {elem.title && elem.title.length > 50
                             ? elem.title.slice(0, 50) + "..."
                             : elem.title}
                         </Typography>
                         <Typography
+                          fontSize="12px"
                           variant="subtitle1"
                           color="text.secondary"
                           component="div"
@@ -60,7 +65,7 @@ export default function FavoriteContainer(props) {
                     </Box>
                     <CardMedia
                       component="img"
-                      sx={{ width: 151 }}
+                      sx={{ width: 200 }}
                       image={elem.imageLinks.thumbnail}
                       alt="Books cover"
                     />

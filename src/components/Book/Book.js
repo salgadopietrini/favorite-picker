@@ -14,9 +14,9 @@ export default function Book(props) {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 180 }}>
+      <Card sx={{ maxWidth: 180, height: 350 }}>
         <CardHeader
-          titleTypographyProps={{ variant: "body1" }}
+          titleTypographyProps={{ variant: "body1", height: 50, fontSize: 12 }}
           title={
             props.info.title && props.info.title.length > 50
               ? props.info.title.slice(0, 50) + "..."
@@ -28,6 +28,7 @@ export default function Book(props) {
         <CardMedia
           component="img"
           width="150"
+          height="180"
           image={props.info.imageLinks.thumbnail}
           alt="Book Cover"
         />
